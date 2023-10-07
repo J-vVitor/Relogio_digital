@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Digital | João Vitor</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="shortcut icon" href="assets/img/ampulheta.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="relogio">
+
+        <div>
+            <span id="horas">00</span>
+            <span class="tempo">Horas</span>
+        </div>
+
+        <div>
+            <span id="minutos">00</span>
+            <span class="tempo">Minutos</span>
+        </div>
+
+        <div>
+            <span id="segundos">00</span>
+            <span class="tempo">Segundos</span>
+        </div>
+
+    </div>
+
+    <script>
+        let horas = document.getElementById('horas');
+        let minutos = document.getElementById('minutos');
+        let segundos = document.getElementById('segundos');
+
+        const time = setInterval(function tim(){
+            let data = new Date();
+            let h = data.getHours()
+            let m = data.getMinutes()
+            let s = data.getSeconds()
+
+
+               if( h < 10){
+                horas.textContent = '0' + h
+               }else{
+                horas.textContent =  h
+               }
+      
+                if( m < 10){
+                    minutos.textContent = '0' + m
+                }else{
+                    minutos.textContent =  m
+                }
+
+
+                if( s < 10){
+                    segundos.textContent = '0' + s
+                }else{
+                    segundos.textContent =  s
+                }
+            
+        })
+    </script>
+</body>
+
+</html>
